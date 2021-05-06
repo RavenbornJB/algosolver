@@ -1,12 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+
+import CreateView from "./views/CreateView";
+import LoginView from "./views/LoginView";
+import ProblemListView from "./views/ProblemListView";
+import ProfileView from "./views/ProfileView";
+import ProblemView from "./views/ProblemView";
+import RegisterView from "./views/RegisterView";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Router>
+          <Switch>
+              <Route path="/login">
+                  <LoginView/>
+              </Route>
+              <Route path="/problemlist">
+                  <ProblemListView/>
+              </Route>
+              <Route path="/viewproblem">
+                  <ProblemView/>
+              </Route>
+              <Route path="/create">
+                  <CreateView/>
+              </Route>
+              <Route path="/profile">
+                  <ProfileView/>
+              </Route>
+              <Route path="/register">
+                  <RegisterView/>
+              </Route>
+          </Switch>
+      </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
