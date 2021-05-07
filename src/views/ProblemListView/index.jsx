@@ -1,14 +1,13 @@
 import React from 'react';
-import LoginView from "../LoginView";
-//import LoginForm from '../../components/LoginForm'
+import ProblemListForm from "../../components/problem_list/ProblemListForm";
 
 
 class ProblemListView extends React.Component {
     render() {
         return <div>
-        </div>;
+                    <ProblemListForm/>
+               </div>;
     }
 }
-
 
 export default ProblemListView;
