@@ -1,6 +1,6 @@
 import React from 'react';
 import ProblemListView from "../ProblemListView";
-//import LoginForm from '../../Components/LoginForm'
+//import LoginForm from '../../components/LoginForm'
 
 
 class ProblemView extends React.Component {

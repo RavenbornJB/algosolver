@@ -1,6 +1,6 @@
 import React from 'react';
-import FormField from "../../Components/FormField";
-//import LoginForm from '../../Components/LoginForm'
+import FormField from "../../components/auth/FormField";
+//import LoginForm from '../../components/LoginForm'
 
 
 class CreateView extends React.Component {

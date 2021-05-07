@@ -1,11 +1,15 @@
 import React from 'react';
-import LoginForm from '../../Components/LoginForm'
+import LoginMain from "../../components/auth/LoginMain";
+import LoginHeader from "../../components/auth/LoginHeader";
+import LoginFooter from "../../components/auth/LoginFooter";
 
 
 class LoginView extends React.Component {
     render() {
         return <div>
-                    <LoginForm/>
+                    <LoginHeader/>
+                    <LoginMain/>
+                    <LoginFooter/>
                </div>;
     }
 }

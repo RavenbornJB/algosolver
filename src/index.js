@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import CreateView from "./views/CreateView";
@@ -11,29 +11,21 @@ import ProblemListView from "./views/ProblemListView";
 import ProfileView from "./views/ProfileView";
 import ProblemView from "./views/ProblemView";
 import RegisterView from "./views/RegisterView";
+import RegisterForm from "./components/auth/RegisterForm";
 
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
           <Switch>
-              <Route path="/login">
-                  <LoginView/>
-              </Route>
-              <Route path="/problemlist">
-                  <ProblemListView/>
-              </Route>
-              <Route path="/viewproblem">
-                  <ProblemView/>
-              </Route>
-              <Route path="/create">
-                  <CreateView/>
-              </Route>
-              <Route path="/profile">
-                  <ProfileView/>
-              </Route>
-              <Route path="/register">
-                  <RegisterView/>
+              <Route exact path="/login" component={LoginView}/>
+              <Route exact path="/problemlist" component={ProblemListView}/>
+              <Route exact path="/viewproblem" component={ProblemView}/>
+              <Route exact path="/create" component={CreateView}/>
+              <Route exact path="/profile" component={ProfileView}/>
+              <Route exact path="/register" component={RegisterView}/>
+              <Route path="*">
+                  <Redirect to="/login"/>
               </Route>
           </Switch>
       </Router>
