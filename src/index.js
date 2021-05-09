@@ -11,7 +11,6 @@ import ProblemListView from "./views/ProblemListView";
 import ProfileView from "./views/ProfileView";
 import ProblemView from "./views/ProblemView";
 import RegisterView from "./views/RegisterView";
-import RegisterForm from "./components/auth/RegisterForm";
 
 
 ReactDOM.render(
