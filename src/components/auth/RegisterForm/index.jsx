@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.css';
-import AbstractForm from '../AbstractForm'
+import AbstractForm from '../../common/AbstractForm'
 
 class RegisterForm extends React.Component {
     static fields_array = [

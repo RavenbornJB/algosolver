@@ -2,6 +2,8 @@ import React from 'react';
 import FieldProblemDescription from "../../components/problem_view/FieldProblemDescription";
 import FieldCodeEditor from "../../components/problem_view/FieldCodeEditor";
 import FormSolveProblem from "../../components/problem_view/FormSolveProblem";
+import Footer from "../../components/common/Footer";
+import Header from "../../components/common/Header";
 
 
 class ProblemView extends React.Component {
@@ -11,12 +13,14 @@ class ProblemView extends React.Component {
         let problemId = this.props.match.params.problemId;
         // TODO process with db to get info about problems -> render
         return <div>
+            <Header/>
             <FieldProblemDescription
                 brief_description={this.temp_brief_data}
                 full_description={this.temp_full_data}/>
             <FieldCodeEditor/>
             {/*TODO make a redirect_to*/}
             <FormSolveProblem redirect_to={this.props.redirect_to}/>
+            <Footer/>
         </div>
     }
 }

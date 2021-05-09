@@ -1,7 +1,7 @@
 import React from 'react';
 import RegisterMain from "../../components/auth/RegisterMain";
 import LoginHeader from "../../components/auth/LoginHeader";
-import LoginFooter from "../../components/auth/LoginFooter";
+import Footer from "../../components/common/Footer";
 
 
 class RegisterView extends React.Component {
@@ -9,7 +9,7 @@ class RegisterView extends React.Component {
         return <div>
             <LoginHeader/>
             <RegisterMain/>
-            <LoginFooter/>
+            <Footer/>
         </div>;
     }
 }

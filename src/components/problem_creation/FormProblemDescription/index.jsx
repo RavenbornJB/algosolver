@@ -1,9 +1,9 @@
 import React from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ErrorMessage from "../ErrorMessage";
+import ErrorMessage from "../../common/ErrorMessage";
 import {Redirect} from "react-router-dom";
-import FormFieldInput from "../FormFieldInput"
+import FormField from "../../common/FormField"
 import styles from './styles.css';
 
 
@@ -43,9 +43,8 @@ class FormProblemDescription extends React.Component {
                     <div>
 
                         <form onSubmit={this.submitHandler}>
-                            <FormFieldInput field_id={this.brief_info_p.field_id}
-                                            type={this.brief_info_p.type}
-                                            text={this.brief_info_p.text}/>
+                            <FormField field_id={this.brief_info_p.field_id}
+                                       type={this.brief_info_p.type}>{this.brief_info_p.text}</FormField>
 
                             <CKEditor
                                 editor={ ClassicEditor }
@@ -76,7 +75,7 @@ class FormProblemDescription extends React.Component {
                                 // } }
                             />
 
-                            <FormFieldInput field_id="submit" type="submit"/>
+                            <FormField field_id="submit" type="submit"/>
                         </form>
                     </div>
                     {this.state.submit_res}

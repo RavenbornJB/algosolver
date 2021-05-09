@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
-import ErrorMessage from "../../auth/ErrorMessage";
-import FormFieldInput from "../../problem_creation/FormFieldInput";
+import ErrorMessage from "../../common/ErrorMessage";
+import FormField from "../../common/FormField";
 import styles from './styles.css';
 
 
@@ -40,9 +40,9 @@ class FormSolveProblem extends React.Component {
             <div>
 
                 <form onSubmit={this.submitHandler}>
-                    <FormFieldInput field_id={this.file_p.field_id}
+                    <FormField field_id={this.file_p.field_id}
                                     type={this.file_p.type}/>
-                    <FormFieldInput field_id="submit" type="submit"/>
+                    <FormField field_id="submit" type="submit"/>
                 </form>
             </div>
             {this.state.submit_res}

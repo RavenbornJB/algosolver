@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginMain from "../../components/auth/LoginMain";
 import LoginHeader from "../../components/auth/LoginHeader";
-import LoginFooter from "../../components/auth/LoginFooter";
+import Footer from "../../components/common/Footer";
 
 
 class LoginView extends React.Component {
@@ -9,7 +9,7 @@ class LoginView extends React.Component {
         return <div>
                     <LoginHeader/>
                     <LoginMain/>
-                    <LoginFooter/>
+                    <Footer/>
                </div>;
     }
 }
