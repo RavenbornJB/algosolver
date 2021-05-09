@@ -1,14 +1,18 @@
-import React from 'react';
-import ProblemView from "../ProblemView";
-//import LoginForm from '../../components/LoginForm'
-
+import React from "react";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import ProfileMain from "../../components/profile/ProfileMain";
 
 class ProfileView extends React.Component {
-    render() {
-        return <div>
-        </div>;
-    }
+  render() {
+    return (
+      <div>
+        <Header pageName="/profile" />
+        <ProfileMain username="mr_kappa69" />
+        <Footer />
+      </div>
+    );
+  }
 }
-
 
 export default ProfileView;
