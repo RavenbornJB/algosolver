@@ -19,7 +19,7 @@ ReactDOM.render(
           <Switch>
               <Route exact path="/login" component={LoginView}/>
               <Route exact path="/problemlist" component={ProblemListView}/>
-              <Route exact path="/viewproblem" component={ProblemView}/>
+              <Route exact path="/viewproblem/:problemId" component={ProblemView}/>
               <Route exact path="/create" component={CreateView}/>
               <Route exact path="/profile" component={ProfileView}/>
               <Route exact path="/register" component={RegisterView}/>
