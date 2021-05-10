@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from './styles.css';
 
 class FormField extends React.Component {
     render() {
-        console.log(this.props)
-        return <div>
+        return <div className="mb-3">
                     <label htmlFor={this.props.field_id}>{this.props.children}</label>
-                    <input id={this.props.field_id} type={this.props.type}/>
+                    <input className="form-control" id={this.props.field_id} type={this.props.type} placeholder={this.props.placeholder}/>
                </div>;
     }
 }

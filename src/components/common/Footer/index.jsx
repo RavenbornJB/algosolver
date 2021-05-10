@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-class Footer extends React.Component {
-    render() {
-        return <footer>
+const Footer = () => {
+        return (
+            <footer className="footer text-center sticky-footer">
+                <div className="container">
                     <p>
                         UCU APPS<br/>
                         ©2021<br/>
@@ -12,8 +13,10 @@ class Footer extends React.Component {
                     <p>
                         Website by <a href="teamxi"><b>team xi</b></a>
                     </p>
-                </footer>;
-    }
+
+                </div>
+            </footer>
+        );
 }
 
 

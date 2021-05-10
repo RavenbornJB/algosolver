@@ -7,7 +7,7 @@ import Header from "../../components/common/Header";
 class CreateView extends React.Component {
     render() {
         return <div>
-            <Header/>
+            <Header />
             <FormProblemDescription/>
             <Footer/>
                </div>;

@@ -7,18 +7,23 @@ class LoginForm extends React.Component {
         {
             field_id: "email",
             type: "email",
-            text: "Email:"
+            text: "Email",
+            placeholder: "Your email"
         },
         {
             field_id: "password",
             type: "password",
-            text: "Password:"
+            text: "Password",
+            placeholder: "Your password"
         }
     ]
     render() {
-        return <AbstractForm redirect_to="/problemlist" fields={LoginForm.fields_array}/>;
+        return <AbstractForm title="Log In" redirect_to="/problemlist" fields={LoginForm.fields_array}/>;
     }
 }
+
+
+
 
 
 export default LoginForm;

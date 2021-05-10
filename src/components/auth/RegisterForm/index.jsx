@@ -7,32 +7,36 @@ class RegisterForm extends React.Component {
         {
             field_id: "email",
             type: "email",
-            text: "Email:"
+            text: "Email",
+            placeholder: "Your email"
         },
         {
             field_id: "password",
             type: "password",
-            text: "Password:"
+            text: "Password",
+            placeholder: "Your password"
         },
         {
             field_id: "repeat_password",
             type: "password",
-            text: "Repeat password:"
+            text: "Repeat password",
+            placeholder: "Repeat your password"
         },
         {
             field_id: "country",
             type: "country",
-            text: "Country:"
+            text: "Country",
+            placeholder: "Your country"
         },
         {
             field_id: "birthdate",
             type: "date",
-            text: "Birthdate:"
+            text: "Birthdate"
         }
 
     ]
     render() {
-        return <AbstractForm redirect_to="/problemlist" fields={RegisterForm.fields_array}/>;
+        return <AbstractForm title="Register" redirect_to="/problemlist" fields={RegisterForm.fields_array}/>;
     }
 }
 

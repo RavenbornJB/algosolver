@@ -1,4 +1,4 @@
-/* .header {
+.header {
     background-color: lightskyblue;
     width: 100%;
     height: 100px;
@@ -6,7 +6,8 @@
 }
 
 .titleDiv {
-    display: inline-block;
+    display: flex;
+    justify-content: flex-start;
     height: 100%;
     width: 30%;
     margin-left: 5%;
@@ -15,7 +16,8 @@
 }
 
 .nav {
-    float: right;
+    display: flex;
+    justify-content: flex-start;
     margin-top: 2%;
     margin-right: 5%;
 }
@@ -35,4 +37,4 @@
 
 .nav a:hover {
     transform: scale(1.1);
-} */
+}

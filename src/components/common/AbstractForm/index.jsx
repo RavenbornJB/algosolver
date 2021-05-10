@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import './styles.scss';
 import FormField from '../FormField'
 import ErrorMessage from "../ErrorMessage";
 import {Redirect} from "react-router-dom";
@@ -28,14 +28,18 @@ class AbstractForm extends React.Component {
     }
     render() {
         return <div>
-                    <div>
-                        <form onSubmit={this.submitHandler}>
+                    <div className="login-form border">
+                        <h2>{this.props.title}</h2>
+                        <hr/>
+                        <form onSubmit={this.submitHandler} className="form-floating">
                             {
                                 this.props.fields.map(
-                                item => <FormField field_id={item.field_id} type={item.type}>{item.text}</FormField>
+                                item => <FormField field_id={item.field_id} type={item.type} placeholder={item.placeholder}>{item.text}</FormField>
                                 )
                             }
-                            <FormField field_id="submit" type="submit"/>
+                            <div>
+                                <input className="w-100 btn btn-lg btn-primary" id="submit" type="submit"/>
+                            </div>
                         </form>
                     </div>
                     {this.state.submit_res}
