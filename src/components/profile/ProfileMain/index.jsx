@@ -6,7 +6,7 @@ import "./styles.scss";
 class ProfileMain extends React.Component {
   render() {
     return (
-      <main>
+      <main className="profile-main">
         <PersonalInfo />
         <RankingInfo />
       </main>
