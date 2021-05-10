@@ -4,14 +4,15 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ErrorMessage from "../../common/ErrorMessage";
 import {Redirect} from "react-router-dom";
 import FormField from "../../common/FormField"
-import styles from './styles.scss';
+import './styles.scss';
+import SubmitButton from "../../common/SubmitButton";
 
 
 
 class FormProblemDescription extends React.Component {
     brief_info_p = {
         field_id: "brief_info_input",
-        text: "Brief info about the problem",
+        text: "Name",
         type: "text"
     };
 
@@ -40,13 +41,16 @@ class FormProblemDescription extends React.Component {
     }
     render() {
         return <div>
-                    <div>
-
-                        <form onSubmit={this.submitHandler}>
+                    <div className="create-form border">
+                        <h1>
+                            Create problem
+                        </h1>
+                        <form onSubmit={this.submitHandler} >
                             <FormField field_id={this.brief_info_p.field_id}
                                        type={this.brief_info_p.type}>{this.brief_info_p.text}</FormField>
 
                             <CKEditor
+                                className="editor"
                                 editor={ ClassicEditor }
                                 config={ {
                                     ckfinder: {
@@ -75,7 +79,7 @@ class FormProblemDescription extends React.Component {
                                 // } }
                             />
 
-                            <FormField field_id="submit" type="submit"/>
+                            <SubmitButton/>
                         </form>
                     </div>
                     {this.state.submit_res}

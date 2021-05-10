@@ -27,10 +27,10 @@ class ProblemTable extends Component {
         super(props)
         this.state = {
             problems: [
-                { id: 1, name: 'Boy next door', solved_by: 21, rank: 4 },
-                { id: 2, name: 'Dungeon master', solved_by: 19, rank: 22 },
-                { id: 3, name: 'Slave', solved_by: 16, rank: 9 },
-                { id: 4, name: 'Filthy finger', solved_by: 25, rank: 15 }
+                { id: 1, name: 'Sum two numbers', solved_by: 21, rank: 4 },
+                { id: 2, name: 'Multiply two numbers', solved_by: 19, rank: 22 },
+                { id: 3, name: 'Happy primes', solved_by: 16, rank: 9 },
+                { id: 4, name: 'To Go Or Not To Go?', solved_by: 25, rank: 15 }
             ]
         }
     }
@@ -38,7 +38,6 @@ class ProblemTable extends Component {
     render() {
         return (
             <div>
-                <h1 id='gay'>Gachi Problems</h1>
                 <table id='problems'>
                     <tbody>
                     <tr>{this.renderTableHeader()}</tr>

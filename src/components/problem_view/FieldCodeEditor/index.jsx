@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.scss';
+import './styles.scss';
 
 class FieldCodeEditor extends React.Component{
     render(){

@@ -1,1 +1,1 @@
-export const MAIN_TITLE = "GachiAlgo";
+export const MAIN_TITLE = "AlgoSolver";

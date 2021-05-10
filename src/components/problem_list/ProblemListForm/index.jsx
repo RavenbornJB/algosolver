@@ -1,16 +1,15 @@
 import React from 'react';
 import ProblemTable from "../ProblemTable";
-import { Button } from 'react-bootstrap'
+import "./styles.scss"
 
 
 class ProblemListForm extends React.Component {
     render() {
-        return <main>
-            <ProblemTable/>
-            <div>
-                {/*<Button href="/create">Add problem</Button>*/}
-            </div>
-        </main>;
+        return (
+            <main className="problem-list-main">
+                <ProblemTable/>
+            </main>
+        );
 
     }
 }

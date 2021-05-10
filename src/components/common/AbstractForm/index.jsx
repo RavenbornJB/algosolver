@@ -3,6 +3,7 @@ import './styles.scss';
 import FormField from '../FormField'
 import ErrorMessage from "../ErrorMessage";
 import {Redirect} from "react-router-dom";
+import SubmitButton from "../SubmitButton";
 
 class AbstractForm extends React.Component {
     constructor(props) {
@@ -37,9 +38,7 @@ class AbstractForm extends React.Component {
                                 item => <FormField field_id={item.field_id} type={item.type} placeholder={item.placeholder}>{item.text}</FormField>
                                 )
                             }
-                            <div>
-                                <input className="w-100 btn btn-lg btn-primary" id="submit" type="submit"/>
-                            </div>
+                            <SubmitButton/>
                         </form>
                     </div>
                     {this.state.submit_res}

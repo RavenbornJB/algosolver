@@ -4,8 +4,8 @@ import "./styles.scss"
 
 const Footer = () => {
         return (
-            <footer className="footer text-center main-footer">
-                <div className="container">
+            <footer className="footer text-center">
+                <div>
                     <p>
                         UCU APPS<br/>
                         ©2021<br/>

@@ -9,7 +9,7 @@ class FieldProblemDescription extends React.Component{
         // For example from the page of problems list
 
         return <div>
-            <p id="brief_desc">{this.props.brief_description}</p>
+            <h1 id="brief_desc">{this.props.brief_description}</h1>
             <Markup content={this.props.full_description}/>
         </div>;
     }
