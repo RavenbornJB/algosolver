@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './styles.scss'
 
 class ProblemTable extends Component {
     renderTableHeader() {
@@ -10,12 +11,13 @@ class ProblemTable extends Component {
 
     renderTableData() {
         return this.state.problems.map((problem, index) => {
-            const { id, name, solved_by } = problem //destructuring
+            const { id, name, solved_by, rank } = problem //destructuring
             return (
                 <tr key={id}>
                     <td>{id}</td>
                     <td>{name}</td>
                     <td>{solved_by}</td>
+                    <td>{rank}</td>
                 </tr>
             )
         })
@@ -25,10 +27,10 @@ class ProblemTable extends Component {
         super(props)
         this.state = {
             problems: [
-                { id: 1, name: 'A plus B', solved_by: 21 },
-                { id: 2, name: 'Fill a Safe', solved_by: 19 },
-                { id: 3, name: 'Green Tea', solved_by: 16 },
-                { id: 4, name: 'The Great Tea Party', solved_by: 25 }
+                { id: 1, name: 'Boy next door', solved_by: 21, rank: 4 },
+                { id: 2, name: 'Dungeon master', solved_by: 19, rank: 22 },
+                { id: 3, name: 'Slave', solved_by: 16, rank: 9 },
+                { id: 4, name: 'Filthy finger', solved_by: 25, rank: 15 }
             ]
         }
     }
@@ -36,7 +38,7 @@ class ProblemTable extends Component {
     render() {
         return (
             <div>
-                <h1 id='title'>Problem List</h1>
+                <h1 id='gay'>Gachi Problems</h1>
                 <table id='problems'>
                     <tbody>
                     <tr>{this.renderTableHeader()}</tr>

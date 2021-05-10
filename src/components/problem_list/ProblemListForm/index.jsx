@@ -1,5 +1,6 @@
 import React from 'react';
 import ProblemTable from "../ProblemTable";
+import { Button } from 'react-bootstrap'
 
 
 class ProblemListForm extends React.Component {
@@ -7,7 +8,7 @@ class ProblemListForm extends React.Component {
         return <main>
             <ProblemTable/>
             <div>
-                <a href="/create">Add problem</a>
+                <Button href="/create">Add problem</Button>
             </div>
         </main>;
 
