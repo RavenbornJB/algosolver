@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonalInfo from '../PersonalInfo'
 import RankingInfo from '../RankingInfo'
-import styles from './styles.module.css'
+import './styles.scss'
 
 
 class ProfileMain extends React.Component {

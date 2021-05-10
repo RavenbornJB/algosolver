@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from "react-router-dom";
 import ErrorMessage from "../../common/ErrorMessage";
 import FormField from "../../common/FormField";
-import styles from './styles.css';
+import styles from './styles.scss';
 
 
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles.css';
 import AbstractForm from '../../common/AbstractForm'
 
 class RegisterForm extends React.Component {

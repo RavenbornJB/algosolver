@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';

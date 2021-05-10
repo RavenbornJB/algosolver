@@ -4,7 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ErrorMessage from "../../common/ErrorMessage";
 import {Redirect} from "react-router-dom";
 import FormField from "../../common/FormField"
-import styles from './styles.css';
+import styles from './styles.scss';
 
 
 
