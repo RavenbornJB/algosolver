@@ -1,17 +1,16 @@
-import React from 'react';
-import PersonalInfo from '../PersonalInfo'
-import RankingInfo from '../RankingInfo'
-import './styles.scss'
-
+import React from "react";
+import PersonalInfo from "../PersonalInfo";
+import RankingInfo from "../RankingInfo";
 
 class ProfileMain extends React.Component {
-    render() {
-        return <main className="main">
-                    <PersonalInfo username={this.props.username}/>
-                    <RankingInfo username={this.props.username}/>
-                </main>;
-
-    }
+  render() {
+    return (
+      <main>
+        <PersonalInfo />
+        <RankingInfo />
+      </main>
+    );
+  }
 }
 
 export default ProfileMain;

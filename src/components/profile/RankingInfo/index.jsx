@@ -2,13 +2,28 @@ import React from "react";
 
 class RankingInfo extends React.Component {
   render() {
+    const elements = [
+      {
+        title: "Problems solved",
+        count: 68,
+      },
+      {
+        title: "Rank worldwide",
+        count: 1729,
+      },
+      {
+        title: "Rank in country",
+        count: 42,
+      },
+    ];
+
     return (
-      <div className="rankings">
-        <h3> {this.props.username}'s stats: </h3>
+      <div>
+        <h3>Stats:</h3>
         <ul>
-          <li>Problems solved: <b>68</b></li>
-          <li>Rank worldwide: <b>1729</b></li>
-          <li>Rank in country: <b>42</b></li>
+          {elements.map((elem) => {
+            return <li>{elem.title}: <b>{elem.count}</b></li>;
+          })}
         </ul>
       </div>
     );

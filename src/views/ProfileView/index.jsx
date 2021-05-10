@@ -7,8 +7,8 @@ class ProfileView extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
-        <ProfileMain username="mr_kappa69" />
+        <Header />
+        <ProfileMain />
         <Footer />
       </div>
     );
