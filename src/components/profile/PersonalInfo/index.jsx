@@ -1,5 +1,6 @@
 import React from "react";
-import Emoji from "react-emoji-render";
+import AdditionalData from "../AdditionalData";
+import "./styles.scss";
 
 class PersonalInfo extends React.Component {
   render() {
@@ -7,21 +8,12 @@ class PersonalInfo extends React.Component {
       "mr_kappa69" +
       ".png");
     return (
-      <div>
-        <img
-          src={imageName.default}
-          alt="Profile"
-          height="200px"
-          width="200px"
-        />
-        <h2>mr_kappa69</h2>
-        <p>
-          <Emoji text="Country: Ukraine🇺🇦" />
-          <br />
-          Born: 06.02.2003
-          <br />
-          Email: mr_kappa69@gmail.com
-        </p>
+      <div className="personalInfo">
+        <img src={imageName.default} alt="Profile" />
+        <div className="data">
+          <h2>mr_kappa69</h2>
+          <AdditionalData />
+        </div>
       </div>
     );
   }

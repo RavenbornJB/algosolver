@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.scss";
 
 class RankingInfo extends React.Component {
   render() {
@@ -18,11 +19,15 @@ class RankingInfo extends React.Component {
     ];
 
     return (
-      <div>
+      <div className="stats">
         <h3>Stats:</h3>
         <ul>
           {elements.map((elem) => {
-            return <li>{elem.title}: <b>{elem.count}</b></li>;
+            return (
+              <li>
+                {elem.title}: <b>{elem.count}</b>
+              </li>
+            );
           })}
         </ul>
       </div>
