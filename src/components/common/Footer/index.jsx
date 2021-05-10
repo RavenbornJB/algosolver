@@ -1,9 +1,10 @@
 import React from 'react';
+import "./styles.scss"
 
 
 const Footer = () => {
         return (
-            <footer className="footer text-center sticky-footer">
+            <footer className="footer text-center main-footer">
                 <div className="container">
                     <p>
                         UCU APPS<br/>

@@ -8,7 +8,7 @@ class ProblemListForm extends React.Component {
         return <main>
             <ProblemTable/>
             <div>
-                <Button href="/create">Add problem</Button>
+                {/*<Button href="/create">Add problem</Button>*/}
             </div>
         </main>;
 

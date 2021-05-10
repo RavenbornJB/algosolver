@@ -15,7 +15,7 @@ class ProblemTable extends Component {
             return (
                 <tr key={id}>
                     <td>{id}</td>
-                    <td>{name}</td>
+                    <td><a href={`/viewproblem/${id}`}>{name}</a></td>
                     <td>{solved_by}</td>
                     <td>{rank}</td>
                 </tr>
