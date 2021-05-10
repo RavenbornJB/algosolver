@@ -12,7 +12,7 @@ import SubmitButton from "../../common/SubmitButton";
 class FormProblemDescription extends React.Component {
     brief_info_p = {
         field_id: "brief_info_input",
-        text: "Name",
+        text: "Problem Name",
         type: "text"
     };
 
@@ -47,7 +47,7 @@ class FormProblemDescription extends React.Component {
                         </h1>
                         <form onSubmit={this.submitHandler} >
                             <FormField field_id={this.brief_info_p.field_id}
-                                       type={this.brief_info_p.type}>{this.brief_info_p.text}</FormField>
+                                       type={this.brief_info_p.type} placeholder={this.brief_info_p.text}></FormField>
 
                             <CKEditor
                                 className="editor"
@@ -78,8 +78,9 @@ class FormProblemDescription extends React.Component {
                                 //     console.log( 'Focus.', editor );
                                 // } }
                             />
-
-                            <SubmitButton/>
+                            <div className="submit-button">
+                                <SubmitButton/>
+                            </div>
                         </form>
                     </div>
                     {this.state.submit_res}
