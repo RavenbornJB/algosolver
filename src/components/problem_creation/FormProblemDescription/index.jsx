@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ErrorMessage from "../../common/ErrorMessage";
 import {Redirect, useHistory} from "react-router-dom";
 import './styles.scss';
 import SubmitButton from "../../common/SubmitButton";
-
+import ProblemsContext from "../../contexts/GlobalContexts";
 
 
 const FormProblemDescription = (props) => {
 
+
     let [error, setError] = useState(<div/>);
 
     let history = useHistory();
+    const problemsContext = useContext(ProblemsContext);
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -23,6 +25,14 @@ const FormProblemDescription = (props) => {
             // TODO get the info from the form
             //  add the problem description to db
             history.push("/problemlist");
+
+            problemsContext.addProblem({
+                id: 356,
+                totalLikes: 0,
+                totalRank: 1,
+                solvedNum: 10,
+                name: 'Sum two numbers'
+            });
         }
 
     }
