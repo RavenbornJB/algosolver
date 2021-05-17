@@ -1,8 +1,11 @@
 import React, {Component, useContext} from 'react'
 import './styles.scss'
+import ProblemsContext from "../../contexts/GlobalContexts";
 
 class ProblemTable extends Component {
+    static contextType = ProblemsContext;
     renderTableHeader() {
+        console.log(this.context.problems);
         let header = Object.keys(this.state.problems[0])
         return header.map((key, index) => {
             return <th key={index}>{key.toUpperCase()}</th>
@@ -10,6 +13,7 @@ class ProblemTable extends Component {
     }
 
     renderTableData() {
+        console.log(this.context.problems);
         return this.state.problems.map((problem, index) => {
             const { id, name, solved_by, rank } = problem //destructuring
             return (
