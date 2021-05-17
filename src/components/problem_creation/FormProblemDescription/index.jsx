@@ -41,6 +41,7 @@ class FormProblemDescription extends React.Component {
                 solvedNum: 148
             });
             // TODO fix bug with no updating here
+            //
             console.log(this.context.problems);
             this.setState({
                 submit_res: <Redirect to={this.props.redirect_to}/>
