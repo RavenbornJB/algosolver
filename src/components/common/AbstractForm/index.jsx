@@ -6,7 +6,7 @@ import SubmitButton from "../SubmitButton";
 
 const AbstractForm = (props) => {
     let initialState = {}
-    Object.values(props.fields).forEach((field) => {
+    props.fields.forEach((field) => {
         initialState[field.field_id] = "";
     });
 
@@ -32,7 +32,7 @@ const AbstractForm = (props) => {
             <hr/>
             <form onSubmit={handleSubmit} className="form-floating">
                 {
-                    Object.values(props.fields).map(
+                    props.fields.map(
                         item => <FormField onChange={handleChange} key={item.field_id} item={item}/>
                         )
                 }

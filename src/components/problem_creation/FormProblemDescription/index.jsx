@@ -3,18 +3,12 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ErrorMessage from "../../common/ErrorMessage";
 import {Redirect, useHistory} from "react-router-dom";
-import FormField from "../../common/FormField"
 import './styles.scss';
 import SubmitButton from "../../common/SubmitButton";
 
 
 
 const FormProblemDescription = (props) => {
-    const test_props = {
-        field_id: "brief_info_input",
-        text: "Problem Name",
-        type: "text"
-    };
 
     let [error, setError] = useState(<div/>);
 

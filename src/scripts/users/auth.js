@@ -1,16 +1,23 @@
 const ACCOUNTS = new Map();
 
-class User {
-    constructor(login, email, password, country) {
-        this.login = login;
+export class User {
+    constructor(email, password, country, birthdate) {
         this.email = email;
         this.password = password;
         this.country = country;
+        this.birthdate = birthdate;
         this.solved = [];
     }
 }
 
 
-ACCOUNTS.set("maksprotsyk@gmail.com", new User("test", "maksprotsyk@gmail.com", "pass", "Ukraine"));
+ACCOUNTS.set("maksprotsyk@gmail.com",
+    new User(
+        "maksprotsyk@gmail.com",
+        "pass",
+        "Ukraine",
+        "22.08.07"
+    )
+);
 
 export default ACCOUNTS;

@@ -19,8 +19,8 @@ class App extends React.Component {
                         <Route exact path="/viewproblem/:problemId" component={ProblemView}/>
                         <Route exact path="/create" component={CreateView}/>
                         <Route exact path="/profile" component={ProfileView}/>
-                        <Route path="*">
-                            <Redirect to="/login"/>
+                        <Route path="*" >
+                            <Redirect to="/problemlist"/>
                         </Route>
                     </Switch>
                 </Router>

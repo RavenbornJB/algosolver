@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AbstractForm from '../../common/AbstractForm'
+import {useHistory} from "react-router-dom";
 
-class RegisterForm extends React.Component {
-    static fields_array = [
+import ACCOUNTS, {User} from "../../../scripts/users/auth";
+import ErrorMessage from "../../common/ErrorMessage";
+
+const RegisterForm = () => {
+    const fields_array = [
         {
             field_id: "email",
             type: "email",
@@ -16,7 +20,7 @@ class RegisterForm extends React.Component {
             placeholder: "Your password"
         },
         {
-            field_id: "repeat_password",
+            field_id: "passrep",
             type: "password",
             text: "Repeat password",
             placeholder: "Repeat your password"
@@ -33,10 +37,30 @@ class RegisterForm extends React.Component {
             text: "Birthdate"
         }
 
-    ]
-    render() {
-        return <AbstractForm title="Register" redirect_to="/problemlist" fields={RegisterForm.fields_array}/>;
+    ];
+
+    let [error, setError] = useState(<div/>);
+
+    let history = useHistory();
+
+    const handleSubmit = (state) => {
+        if (ACCOUNTS.has(state.email)) {
+            setError(<ErrorMessage>This account already exists</ErrorMessage>)
+            return;
+        } else if (state.password !== state.passrep) {
+            setError(<ErrorMessage>Password are not the same </ErrorMessage>)
+            return;
+        }
+        ACCOUNTS.set(state.email, new User(state.email, state.password, state.country, state.birthdate))
+        history.push("/login");
     }
+
+
+    return (
+        <div>
+            <AbstractForm handleSubmit={handleSubmit} title="Log In" redirect_to="/problemlist" fields={fields_array}/>
+            {error}
+        </div>);
 }
 
 

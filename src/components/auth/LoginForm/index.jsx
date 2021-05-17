@@ -6,20 +6,20 @@ import ACCOUNTS from "../../../scripts/users/auth";
 import ErrorMessage from "../../common/ErrorMessage";
 
 const LoginForm = (props) => {
-    const fields_array = {
-        "email": {
+    const fields_array = [
+        {
             field_id: "email",
             type: "email",
             text: "Email",
             placeholder: "Your email"
         },
-        "password": {
+        {
             field_id: "password",
             type: "password",
             text: "Password",
             placeholder: "Your password"
         }
-    }
+    ];
 
     const [error, setError] = useState(<div/>);
 
@@ -31,7 +31,6 @@ const LoginForm = (props) => {
             return;
         }
         history.push("/problemlist");
-        return true;
     }
 
     return (
