@@ -7,9 +7,7 @@ class ProfileView extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <ProfileMain />
-        <Footer />
       </div>
     );
   }

@@ -15,7 +15,6 @@ class ProblemView extends React.Component {
         // TODO process with db to get info about problems -> render
         return (
             <div>
-                <Header/>
                 <main className="border solve-page">
                     <FieldProblemDescription
                         brief_description={this.temp_brief_data}
@@ -25,7 +24,6 @@ class ProblemView extends React.Component {
                     {/*TODO make a redirect_to*/}
                     <FormSolveProblem redirect_to={this.props.redirect_to}/>
                 </main>
-                <Footer/>
             </div>);
     }
 }

@@ -35,7 +35,7 @@ class AbstractForm extends React.Component {
                         <form onSubmit={this.submitHandler} className="form-floating">
                             {
                                 this.props.fields.map(
-                                item => <FormField field_id={item.field_id} type={item.type} placeholder={item.placeholder}>{item.text}</FormField>
+                                item => <FormField key={item.field_id} field_id={item.field_id} type={item.type} placeholder={item.placeholder}>{item.text}</FormField>
                                 )
                             }
                             <SubmitButton/>

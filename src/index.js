@@ -5,12 +5,9 @@ import './index.scss';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
-import CreateView from "./views/CreateView";
 import LoginView from "./views/LoginView";
-import ProblemListView from "./views/ProblemListView";
-import ProfileView from "./views/ProfileView";
-import ProblemView from "./views/ProblemView";
 import RegisterView from "./views/RegisterView";
+import App from "./App";
 
 
 ReactDOM.render(
@@ -18,13 +15,9 @@ ReactDOM.render(
       <Router>
           <Switch>
               <Route exact path="/login" component={LoginView}/>
-              <Route exact path="/problemlist" component={ProblemListView}/>
-              <Route exact path="/viewproblem/:problemId" component={ProblemView}/>
-              <Route exact path="/create" component={CreateView}/>
-              <Route exact path="/profile" component={ProfileView}/>
               <Route exact path="/register" component={RegisterView}/>
-              <Route path="*">
-                  <Redirect to="/login"/>
+              <Route path="*" component={App}>
+
               </Route>
           </Switch>
       </Router>

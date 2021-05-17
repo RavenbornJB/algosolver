@@ -1,6 +1,5 @@
-import styles from "../Header/styles.module.css";
-import React from "react";
-import { useLocation } from 'react-router-dom';
+import React, {useEffect} from "react";
+import { useRouteMatch } from 'react-router-dom';
 import {MAIN_TITLE} from "../../../constants";
 
 
@@ -25,7 +24,9 @@ const Navigation = () => {
     ];
 
 
-    const path = useLocation().pathname;
+
+    const {url} = useRouteMatch();
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">{MAIN_TITLE}</a>
@@ -33,10 +34,10 @@ const Navigation = () => {
                 {
                     elements.map((elem) => {
                         let name = "nav-item nav-link";
-                        if (elem.href === path) {
+                        if (elem.href === url) {
                             name += " active";
                         }
-                        return <a className={name} href={elem.href}>{elem.title}</a>;
+                        return <a className={name} key={elem.href} href={elem.href}>{elem.title}</a>;
                     })
                 }
             </div>

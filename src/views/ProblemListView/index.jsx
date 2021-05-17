@@ -6,11 +6,11 @@ import Header from "../../components/common/Header";
 
 class ProblemListView extends React.Component {
     render() {
-        return <div>
-                    <Header/>
-                    <ProblemListForm/>
-                    <Footer/>
-               </div>;
+        return (
+            <div>
+                <ProblemListForm/>
+            </div>
+        );
     }
 }
 

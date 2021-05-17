@@ -6,11 +6,11 @@ import Header from "../../components/common/Header";
 
 class CreateView extends React.Component {
     render() {
-        return <div>
-            <Header />
-            <FormProblemDescription/>
-            <Footer/>
-               </div>;
+        return (
+            <div>
+                <FormProblemDescription/>
+            </div>
+        );
     }
 }
 
