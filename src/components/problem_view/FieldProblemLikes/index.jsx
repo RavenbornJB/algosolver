@@ -1,10 +1,10 @@
 import { LikeButton } from '@lyket/react';
 
-const FieldProblemLikes = (id, namespace="post") => {
-    return (<LikeButton
-        id={id}
-        namespace={namespace}
-    />);
+const FieldProblemLikes = (props) => {
+    return <LikeButton
+        id={props.id}
+        namespace="post"
+    />;
 }
 
 export default FieldProblemLikes;
