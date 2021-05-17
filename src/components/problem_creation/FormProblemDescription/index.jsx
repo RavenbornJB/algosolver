@@ -6,10 +6,12 @@ import {Redirect} from "react-router-dom";
 import FormField from "../../common/FormField"
 import './styles.scss';
 import SubmitButton from "../../common/SubmitButton";
+import ProblemsContext from "../../problem_list/GlobalContexts";
 
 
 
 class FormProblemDescription extends React.Component {
+    static contextType = ProblemsContext;
     brief_info_p = {
         field_id: "brief_info_input",
         text: "Problem Name",
@@ -33,6 +35,13 @@ class FormProblemDescription extends React.Component {
         } else {
             // TODO get the info from the form
             //  add the problem description to db
+            this.context.addProblem(0, {
+                totalLikes: 228,
+                totalRank: 322,
+                solvedNum: 148
+            });
+            // TODO fix bug with no updating here
+            console.log(this.context.problems);
             this.setState({
                 submit_res: <Redirect to={this.props.redirect_to}/>
             });
