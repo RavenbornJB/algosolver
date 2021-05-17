@@ -7,6 +7,9 @@ import ProfileView from "../views/ProfileView";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import ProblemsProvider from "../components/contexts/ProblemsProvider";
+import { Provider } from '@lyket/react';
+import {LIKES_API_TOKEN} from "../confidential_info/constants";
+
 
 class App extends React.Component {
     render() {
@@ -14,6 +17,8 @@ class App extends React.Component {
             <div>
                 <Header/>
                 <ProblemsProvider>
+                    {/*Used for likes button in problem view*/}
+                    <Provider apiKey={LIKES_API_TOKEN}>
                     <Router>
                         <Switch>
                             <Route exact path="/problemlist" component={ProblemListView}/>
@@ -25,6 +30,7 @@ class App extends React.Component {
                             </Route>
                         </Switch>
                     </Router>
+                    </Provider>
                 </ProblemsProvider>
 
                 <Footer/>
