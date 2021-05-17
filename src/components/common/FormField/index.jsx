@@ -1,12 +1,13 @@
 import React from 'react';
 
-class FormField extends React.Component {
-    render() {
-        return <div className="mb-3">
-                    <label htmlFor={this.props.field_id}>{this.props.children}</label>
-                    <input className="form-control" id={this.props.field_id} type={this.props.type} placeholder={this.props.placeholder}/>
-               </div>;
-    }
+const FormField = (props) => {
+    return (
+        <div className="mb-3">
+            <label htmlFor={props.item.field_id}>{props.item.text}</label>
+            <input onChange={props.onChange} className="form-control" id={props.item.field_id} type={props.item.type} placeholder={props.item.placeholder}/>
+        </div>
+    );
+
 }
 
 

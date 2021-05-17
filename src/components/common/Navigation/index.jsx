@@ -1,4 +1,3 @@
-import React, {useEffect} from "react";
 import { useRouteMatch } from 'react-router-dom';
 import {MAIN_TITLE} from "../../../constants";
 
