@@ -1,9 +1,6 @@
 import React from 'react';
 import FieldProblemDescription from "../../components/problem_view/FieldProblemDescription";
-import FieldCodeEditor from "../../components/problem_view/FieldCodeEditor";
 import FormSolveProblem from "../../components/problem_view/FormSolveProblem";
-import Footer from "../../components/common/Footer";
-import Header from "../../components/common/Header";
 import "./styles.scss"
 
 
