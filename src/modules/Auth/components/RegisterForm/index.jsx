@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import AbstractForm from '../../common/AbstractForm'
+import AbstractForm from '../../../Common/components/AbstractForm'
 import {useHistory} from "react-router-dom";
 
-import ACCOUNTS, {User} from "../../../scripts/users/auth";
-import ErrorMessage from "../../common/ErrorMessage";
+import ACCOUNTS, {User} from "../../scripts/auth";
+import ErrorMessage from "../../../Common/components/ErrorMessage";
 
 const RegisterForm = () => {
     const fields_array = [
@@ -52,7 +52,7 @@ const RegisterForm = () => {
             return;
         }
         ACCOUNTS.set(state.email, new User(state.email, state.password, state.country, state.birthdate))
-        history.push("/login");
+        history.replace("/login");
     }
 
 

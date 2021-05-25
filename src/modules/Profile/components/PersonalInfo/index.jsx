@@ -4,7 +4,7 @@ import "./styles.scss";
 
 class PersonalInfo extends React.Component {
   render() {
-    const imageName = require("../../../images/profile-pictures/" +
+    const imageName = require("../../../../images/profile-pictures/" +
       "mr_kappa69" +
       ".png");
     return (

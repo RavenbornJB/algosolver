@@ -1,5 +1,5 @@
 import React from 'react';
-import FormProblemDescription from "../../components/problem_creation/FormProblemDescription";
+import FormProblemDescription from "../../modules/ProblemCreation/components/FormProblemDescription";
 
 
 class CreateView extends React.Component {

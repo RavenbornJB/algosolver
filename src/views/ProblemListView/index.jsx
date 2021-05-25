@@ -1,5 +1,5 @@
 import React from 'react';
-import ProblemListForm from "../../components/problem_list/ProblemListForm";
+import ProblemListForm from "../../modules/ProblemList/components/ProblemListForm";
 
 class ProblemListView extends React.Component {
     render() {

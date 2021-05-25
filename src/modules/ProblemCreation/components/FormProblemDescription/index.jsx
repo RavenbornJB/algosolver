@@ -1,11 +1,11 @@
 import React, {useState, useContext} from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ErrorMessage from "../../common/ErrorMessage";
+import ErrorMessage from "../../../Common/components/ErrorMessage";
 import {Redirect, useHistory} from "react-router-dom";
 import './styles.scss';
-import SubmitButton from "../../common/SubmitButton";
-import ProblemsContext from "../../contexts/GlobalContexts";
+import SubmitButton from "../../../Common/components/SubmitButton";
+import ProblemsContext from "../../../Contexts/GlobalContexts";
 
 
 const FormProblemDescription = (props) => {

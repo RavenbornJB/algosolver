@@ -5,7 +5,7 @@ import {MAIN_TITLE} from "../../../constants";
 const Navigation = () => {
     const elements = [
         {
-            href: "/profile",
+            href: "/Profile",
             title: "Profile"
         },
         {

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
 
-import AbstractForm from '../../common/AbstractForm'
-import ACCOUNTS from "../../../scripts/users/auth";
-import ErrorMessage from "../../common/ErrorMessage";
+import AbstractForm from '../../../Common/components/AbstractForm'
+import ACCOUNTS from "../../scripts/auth";
+import ErrorMessage from "../../../Common/components/ErrorMessage";
 
 const LoginForm = (props) => {
     const fields_array = [
@@ -30,7 +30,7 @@ const LoginForm = (props) => {
             setError(<ErrorMessage>Wrong email or password</ErrorMessage>)
             return;
         }
-        history.push("/problemlist");
+        history.replace("/problemlist");
     }
 
     return (

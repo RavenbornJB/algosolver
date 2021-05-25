@@ -4,9 +4,9 @@ import ProblemListView from "../views/ProblemListView";
 import ProblemView from "../views/ProblemView";
 import CreateView from "../views/CreateView";
 import ProfileView from "../views/ProfileView";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import ProblemsProvider from "../components/contexts/ProblemsProvider";
+import Header from "../modules/Common/components/Header";
+import Footer from "../modules/Common/components/Footer";
+import ProblemsProvider from "../modules/Contexts/ProblemsProvider";
 
 class App extends React.Component {
     render() {

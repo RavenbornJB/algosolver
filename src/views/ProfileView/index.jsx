@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileMain from "../../components/profile/ProfileMain";
+import ProfileMain from "../../modules/Profile/components/ProfileMain";
 
 class ProfileView extends React.Component {
   render() {

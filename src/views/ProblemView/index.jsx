@@ -1,6 +1,6 @@
 import React from 'react';
-import FieldProblemDescription from "../../components/problem_view/FieldProblemDescription";
-import FormSolveProblem from "../../components/problem_view/FormSolveProblem";
+import FieldProblemDescription from "../../modules/ProblemView/components/FieldProblemDescription";
+import FormSolveProblem from "../../modules/ProblemView/components/FormSolveProblem";
 import "./styles.scss"
 
 

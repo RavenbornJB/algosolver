@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginMain from "../../components/auth/LoginMain";
-import LoginHeader from "../../components/auth/LoginHeader";
-import Footer from "../../components/common/Footer";
+import LoginMain from "../../modules/Auth/components/LoginMain";
+import LoginHeader from "../../modules/Auth/components/LoginHeader";
+import Footer from "../../modules/Common/components/Footer";
 
 
 class LoginView extends React.Component {

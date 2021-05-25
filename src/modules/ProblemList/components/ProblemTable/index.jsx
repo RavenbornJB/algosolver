@@ -1,6 +1,6 @@
 import React, {Component, useContext} from 'react'
 import './styles.scss'
-import ProblemsContext from "../../contexts/GlobalContexts";
+import ProblemsContext from "../../../Contexts/GlobalContexts";
 
 class ProblemTable extends Component {
     static contextType = ProblemsContext;

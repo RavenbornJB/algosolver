@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
-import ErrorMessage from "../../common/ErrorMessage";
-import SubmitButton from "../../common/SubmitButton";
+import ErrorMessage from "../../../Common/components/ErrorMessage";
+import SubmitButton from "../../../Common/components/SubmitButton";
 
 
 
