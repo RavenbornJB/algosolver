@@ -14,11 +14,7 @@ const AbstractForm = (props) => {
     const [state, setState] = useState(initialState);
 
     const handleChange = (event) => {
-        setState( prevState => {
-            let newState = {...prevState};
-            newState[event.target.id] =  event.target.value;
-            return newState;
-        });
+        setState(  {...state, [event.target.id]: event.target.value});
     }
 
     const handleSubmit = (event) => {
