@@ -15,6 +15,9 @@ const FormProblemDescription = (props) => {
 
     let history = useHistory();
     const problemsContext = useContext(ProblemsContext);
+    const testInputId = "testInputId";
+    const testOutputId = "testOutputId";
+
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -74,6 +77,14 @@ const FormProblemDescription = (props) => {
                         //     console.log( 'Focus.', editor );
                         // } }
                     />
+                    <div className="testsForm">
+                        <label htmlFor="testInput">Input test data</label>
+                        <input type="file" name="testInput" id={testInputId}/>
+                        <label htmlFor="testOutput">Output test data</label>
+                        <input type="file" name="testOutput" id={testOutputId}/>
+                    </div>
+
+
                     <div className="submit-button">
                         <SubmitButton/>
                     </div>
