@@ -4,6 +4,7 @@ import FieldCodeEditor from "../../components/problem_view/FieldCodeEditor";
 import FormSolveProblem from "../../components/problem_view/FormSolveProblem";
 import Footer from "../../components/common/Footer";
 import Header from "../../components/common/Header";
+import FieldProblemLikes from "../../components/problem_view/FieldProblemLikes";
 import "./styles.scss"
 
 
@@ -23,6 +24,7 @@ class ProblemView extends React.Component {
                     {/*<FieldCodeEditor/>*/}
                     {/*TODO make a redirect_to*/}
                     <FormSolveProblem redirect_to={this.props.redirect_to}/>
+                    <FieldProblemLikes id={problemId}/>
                 </main>
             </div>);
     }
