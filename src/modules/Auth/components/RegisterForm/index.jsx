@@ -14,6 +14,12 @@ const RegisterForm = () => {
             placeholder: "Your email"
         },
         {
+            nick: "nick",
+            type: "text",
+            text: "Nickname",
+            placeholder: "Your nickname"
+        },
+        {
             field_id: "password",
             type: "password",
             text: "Password",
@@ -58,7 +64,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <AbstractForm handleSubmit={handleSubmit} title="Log In" redirect_to="/problemlist" fields={fields_array}/>
+            <AbstractForm handleSubmit={handleSubmit} title="Register" redirect_to="/login" fields={fields_array}/>
             {error}
         </div>);
 }

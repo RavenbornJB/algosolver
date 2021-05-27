@@ -1,5 +1,8 @@
-import { useRouteMatch } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
+import {useDispatch} from "react-redux";
+
 import {MAIN_TITLE} from "../../../constants";
+import {logout} from "../../../stores/LoginStore";
 
 
 const Navigation = () => {
@@ -15,31 +18,24 @@ const Navigation = () => {
         {
             href: "/create",
             title: "Create"
-        },
-        {
-            href: "/login",
-            title: "Log Out"
         }
     ];
 
+    const dispatch = useDispatch();
 
 
-    const {url} = useRouteMatch();
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="/">{MAIN_TITLE}</a>
+            <Link className="navbar-brand" to="/problemlist">{MAIN_TITLE}</Link>
             <div className="nav nav-pills">
                 {
                     elements.map((elem) => {
-                        let name = "nav-item nav-link";
-                        if (elem.href === url) {
-                            name += " active";
-                        }
-                        return <a className={name} key={elem.href} href={elem.href}>{elem.title}</a>;
+                        return <NavLink className="nav-item nav-link" key={elem.href} to={elem.href}>{elem.title}</NavLink>;
                     })
                 }
             </div>
+            <a className="nav-item nav-link" href="/login" onClick={() => dispatch(logout())}>Log Out</a>
         </nav>
     );
 

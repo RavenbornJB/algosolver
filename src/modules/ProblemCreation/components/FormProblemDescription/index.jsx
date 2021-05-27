@@ -5,7 +5,7 @@ import ErrorMessage from "../../../Common/components/ErrorMessage";
 import {Redirect, useHistory} from "react-router-dom";
 import './styles.scss';
 import SubmitButton from "../../../Common/components/SubmitButton";
-import ProblemsContext from "../../../Contexts/GlobalContexts";
+import ProblemsContext from "../../../сontexts/GlobalContexts";
 
 
 const FormProblemDescription = (props) => {

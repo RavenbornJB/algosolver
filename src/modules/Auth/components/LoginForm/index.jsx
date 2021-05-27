@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
 
+import { useDispatch } from 'react-redux'
+
+
 import AbstractForm from '../../../Common/components/AbstractForm'
 import ACCOUNTS from "../../scripts/auth";
 import ErrorMessage from "../../../Common/components/ErrorMessage";
+
+import {login} from "../../../stores/LoginStore";
 
 const LoginForm = (props) => {
     const fields_array = [
@@ -23,6 +28,8 @@ const LoginForm = (props) => {
 
     const [error, setError] = useState(<div/>);
 
+    const dispatch = useDispatch();
+
     let history = useHistory();
 
     const handleSubmit = (state) => {
@@ -30,6 +37,7 @@ const LoginForm = (props) => {
             setError(<ErrorMessage>Wrong email or password</ErrorMessage>)
             return;
         }
+        dispatch(login({...ACCOUNTS.get(state.email)}));
         history.replace("/problemlist");
     }
 
