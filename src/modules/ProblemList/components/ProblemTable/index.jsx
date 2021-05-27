@@ -1,5 +1,8 @@
 import React, {Component, useContext} from 'react'
+import {Link, NavLink } from 'react-router-dom';
+
 import './styles.scss'
+
 import ProblemsContext from "../../../сontexts/GlobalContexts";
 
 class ProblemTable extends Component {
@@ -19,7 +22,7 @@ class ProblemTable extends Component {
             return (
                 <tr key={id}>
                     <td>{id}</td>
-                    <td><a href={`/viewproblem/${id}`}>{name}</a></td>
+                    <td><Link to={`/viewproblem/${id}`}>{name}</Link></td>
                     <td>{solved_by}</td>
                     <td>{rank}</td>
                 </tr>

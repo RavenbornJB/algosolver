@@ -6,9 +6,11 @@ import CreateView from "../views/CreateView";
 import ProfileView from "../views/ProfileView";
 import Header from "../modules/Common/components/Header";
 import Footer from "../modules/Common/components/Footer";
-import ProblemsProvider from "../modules/сontexts/ProblemsProvider";
-import {useSelector} from "react-redux";
-import {selectUser} from "../modules/stores/LoginStore";
+import {Provider, useSelector} from "react-redux";
+import LoginStore, {selectUser} from "../modules/stores/LoginStore";
+import SafeRoute from "../modules/Common/components/SafeRoute";
+import LoginView from "../views/LoginView";
+import RegisterView from "../views/RegisterView";
 
 
 const App = () => {
@@ -23,21 +25,19 @@ const App = () => {
     }
     return (
         <div>
-            <ProblemsProvider>
-                <Router>
-                    <Header/>
-                    <Switch>
-                        <Route exact path="/problemlist" component={ProblemListView} onEnter={checkLogin}/>
-                        <Route exact path="/viewproblem/:problemId" component={ProblemView} onEnter={checkLogin}/>
-                        <Route exact path="/create" component={CreateView} onEnter={checkLogin}/>
-                        <Route exact path="/profile" component={ProfileView} onEnter={checkLogin}/>
-                        <Route path="*" onEnter={checkLogin}>
-                            <Redirect to="/problemlist"/>
-                        </Route>
-                    </Switch>
-                </Router>
-                <Footer/>
-            </ProblemsProvider>
+            <Router>
+                <Switch>
+                    <Route exact path="/login" component={LoginView}/>
+                    <Route exact path="/register" component={RegisterView}/>
+                    <SafeRoute exact path="/problemlist" component={ProblemListView}/>
+                    <SafeRoute exact path="/viewproblem/:problemId" component={ProblemView}/>
+                    <SafeRoute exact path="/create" component={CreateView}/>
+                    <SafeRoute exact path="/profile" component={ProfileView}/>
+                    <SafeRoute path="*">
+                        <Redirect to="/problemlist"/>
+                    </SafeRoute>
+                </Switch>
+            </Router>
         </div>
         );
 }

@@ -2,13 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux'
 
-import LoginView from "./views/LoginView";
-import RegisterView from "./views/RegisterView";
 import App from "./App";
 
 import LoginStore from './modules/stores/LoginStore'
@@ -17,15 +14,8 @@ import LoginStore from './modules/stores/LoginStore'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={LoginStore}>
-      <Router>
-          <Switch>
-              <Route exact path="/login" component={LoginView}/>
-              <Route exact path="/register" component={RegisterView}/>
-              <Route path="*" component={App}/>
-          </Switch>
-      </Router>
+      <App/>
     </Provider>
-
   </React.StrictMode>,
   document.getElementById('root')
 );
