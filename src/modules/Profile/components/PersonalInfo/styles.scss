@@ -6,15 +6,20 @@
 img {
   height: 220px;
   width: 200px;
-  margin: -30px 30px 30px 30px;
+  margin: -50px 30px 70px 30px;
   border-radius: 10px;
 }
 
 .data {
   display: inline-block;
+  width: 50%;
   margin: 20px;
 }
 
 .data h2 {
   font-weight: lighter;
+}
+
+#my_file {
+  display: none;
 }

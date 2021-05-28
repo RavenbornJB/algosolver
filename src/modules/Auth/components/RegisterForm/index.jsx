@@ -10,37 +10,37 @@ const RegisterForm = () => {
         {
             field_id: "email",
             type: "email",
-            text: "Email",
+            text: "Email:",
             placeholder: "Your email"
         },
         {
             nick: "nick",
             type: "text",
-            text: "Nickname",
-            placeholder: "Your nickname"
+            text: "Username:",
+            placeholder: "Your username"
         },
         {
             field_id: "password",
             type: "password",
-            text: "Password",
+            text: "Password:",
             placeholder: "Your password"
         },
         {
             field_id: "passrep",
             type: "password",
-            text: "Repeat password",
+            text: "Repeat password:",
             placeholder: "Repeat your password"
         },
         {
             field_id: "country",
             type: "country",
-            text: "Country",
+            text: "Country:",
             placeholder: "Your country"
         },
         {
             field_id: "birthdate",
             type: "date",
-            text: "Birthdate"
+            text: "Birthdate:"
         }
 
     ];
@@ -57,7 +57,7 @@ const RegisterForm = () => {
             setError(<ErrorMessage>Password are not the same </ErrorMessage>)
             return;
         }
-        ACCOUNTS.set(state.email, new User(state.email, state.password, state.country, state.birthdate))
+        ACCOUNTS.set(state.email, new User(state.email, state.nick, state.password, state.country, state.birthdate))
         history.replace("/login");
     }
 

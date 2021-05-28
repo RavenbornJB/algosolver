@@ -7,6 +7,7 @@ export class User {
         this.password = password;
         this.country = country;
         this.birthdate = birthdate;
+        this.avatar = "default";
         this.solved = [];
         this.created = [];
     }
@@ -20,6 +21,16 @@ ACCOUNTS.set("maksprotsyk@gmail.com",
         "pass",
         "Ukraine",
         "22.08.07"
+    )
+);
+
+ACCOUNTS.set("test@g",
+    new User(
+        "test@g",
+        "test",
+        "p",
+        "Germany",
+        "06.02.2003"
     )
 );
 

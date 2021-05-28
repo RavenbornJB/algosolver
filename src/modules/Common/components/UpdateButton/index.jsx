@@ -1,15 +1,16 @@
 import React from "react";
 
-const SubmitButton = () => {
+const UpdateButton = () => {
   return (
     <div>
       <input
-        className={"w-100 btn btn-lg btn-primary"}
+        className={"w-20 btn btn-outline-primary"}
         id="submit"
         type="submit"
+        value="Update"
       />
     </div>
   );
 };
 
-export default SubmitButton;
+export default UpdateButton;
