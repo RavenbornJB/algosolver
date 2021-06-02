@@ -6,17 +6,18 @@ import {Redirect, useHistory} from "react-router-dom";
 import './styles.scss';
 import SubmitButton from "../../../Common/components/SubmitButton";
 import ProblemsContext from "../../../сontexts/GlobalContexts";
+import {Button} from "react-bootstrap";
+import TestsSection from "../TestsSection";
 
 
 const FormProblemDescription = (props) => {
 
-
+    const problemsContext = useContext(ProblemsContext);
     let [error, setError] = useState(<div/>);
 
+    let [tests, setTests] = useState([{input: "", output: ""}])
+
     let history = useHistory();
-    const problemsContext = useContext(ProblemsContext);
-    const testInputId = "testInputId";
-    const testOutputId = "testOutputId";
 
 
     const submitHandler = (event) => {
@@ -39,6 +40,9 @@ const FormProblemDescription = (props) => {
         }
 
     }
+
+
+
     return (
         <div>
             <div className="create-form border">
@@ -47,44 +51,20 @@ const FormProblemDescription = (props) => {
                 </h1>
                 <form onSubmit={submitHandler} >
                     <div className="mb-3">
-                        <label htmlFor="briefDesc">Enter problem name:</label>
                         <input className="form-control" id="briefDesc" type="text" placeholder="Problem name"/>
                     </div>
+                    <h3 className="createHeading">Description</h3>
                     <CKEditor
-                        className="editor"
                         editor={ ClassicEditor }
-                        config={ {
-                            ckfinder: {
-                                // TODO supporting images
-                                uploadUrl: 'my_server_url'
-                            }
-                        }}
 
-                        // TODO possibly can be useful
-                        // data="<p>Hello from CKEditor 5!</p>"
-                        // onReady={ editor => {
-                        //     console.log( 'Editor is ready to use!', editor );
-                        // } }
                         onChange={ ( event, editor ) => {
                             // TODO setState of editor data to get the data
                             const data = editor.getData();
                             console.log( { event, editor, data } );
                         } }
-                        // onBlur={ ( event, editor ) => {
-                        //     console.log( 'Blur.', editor );
-                        // } }
-                        // onFocus={ ( event, editor ) => {
-                        //     console.log( 'Focus.', editor );
-                        // } }
                     />
-                    <div className="testsForm">
-                        <label htmlFor="testInput">Input test data</label>
-                        <input type="file" name="testInput" id={testInputId}/>
-                        <label htmlFor="testOutput">Output test data</label>
-                        <input type="file" name="testOutput" id={testOutputId}/>
-                    </div>
 
-
+                    <TestsSection tests={tests} setTests={setTests}/>
                     <div className="submit-button">
                         <SubmitButton/>
                     </div>
