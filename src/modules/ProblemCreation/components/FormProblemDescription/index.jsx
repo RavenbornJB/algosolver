@@ -5,39 +5,59 @@ import ErrorMessage from "../../../Common/components/ErrorMessage";
 import {Redirect, useHistory} from "react-router-dom";
 import './styles.scss';
 import SubmitButton from "../../../Common/components/SubmitButton";
-import ProblemsContext from "../../../сontexts/GlobalContexts";
-import {Button} from "react-bootstrap";
+
 import TestsSection from "../TestsSection";
+import {useSelector} from "react-redux";
+import {selectUser} from "../../../redux/AuthReducer";
+import {setProblemState} from "../../../redux/ProblemsReducer";
 
 
 const FormProblemDescription = (props) => {
 
-    const problemsContext = useContext(ProblemsContext);
-    let [error, setError] = useState(<div/>);
+    const user = useSelector(selectUser);
 
-    let [tests, setTests] = useState([{input: "", output: ""}])
+    const [error, setError] = useState(<div/>);
 
-    let history = useHistory();
+    const [name, setName] = useState("");
+
+    const [description, setDescription] = useState("");
+
+
+    const [tests, setTests] = useState([{input: "", output: ""}])
+
+    const history = useHistory();
+
 
 
     const submitHandler = (event) => {
         event.preventDefault();
-        let test_var = false;
-        if (test_var) {
-            setError(<ErrorMessage>Something went wrong with creating a problem</ErrorMessage>);
-        } else {
-            // TODO get the info from the form
-            //  add the problem description to db
-            history.push("/problemlist");
+        let formData = new FormData();
 
-            problemsContext.addProblem({
-                id: 356,
-                totalLikes: 0,
-                totalRank: 1,
-                solvedNum: 10,
-                name: 'Sum two numbers'
-            });
+        formData.append('email', user.email);
+        formData.append('password', user.password);
+
+        formData.append("name", name);
+
+        formData.append("description", description);
+
+        for (let test of tests) {
+            formData.append(test.input, test.output);
         }
+
+
+
+
+        fetch("http://127.0.0.1:5000/add_problem", {
+            body: formData,
+            method: "POST",
+        }).then(response => response.json()).then(json => {
+            if (json.success) {
+                history.push("/problemlist");
+            }
+            else {
+                setError(<ErrorMessage>User with given email already exists </ErrorMessage>)
+            }
+        });
 
     }
 
@@ -51,17 +71,18 @@ const FormProblemDescription = (props) => {
                 </h1>
                 <form onSubmit={submitHandler} >
                     <div className="mb-3">
-                        <input className="form-control" id="briefDesc" type="text" placeholder="Problem name"/>
+                        <input
+                            onChange={(event => setName(event.target.value))}
+                            className="form-control"
+                            id="briefDesc"
+                            type="text"
+                            placeholder="Problem name"
+                        />
                     </div>
                     <h3 className="createHeading">Description</h3>
                     <CKEditor
                         editor={ ClassicEditor }
-
-                        onChange={ ( event, editor ) => {
-                            // TODO setState of editor data to get the data
-                            const data = editor.getData();
-                            console.log( { event, editor, data } );
-                        } }
+                        onChange={ ( event, editor ) => setDescription(editor.getData())}
                     />
 
                     <TestsSection tests={tests} setTests={setTests}/>

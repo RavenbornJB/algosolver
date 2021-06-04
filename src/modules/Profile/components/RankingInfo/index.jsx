@@ -12,8 +12,8 @@ const RankingInfo = () => {
       <div className="stats">
         <h3>Stats:</h3>
         <ul>
-          <li>Problems solved: <b>{user.solved.length}</b></li>
-          <li>Problems created: <b>{user.created.length}</b></li>
+          <li>Problems solved: <b>0</b></li>
+          <li>Problems created: <b>0</b></li>
           <li>Rank: <b>1024</b></li>
         </ul>
       </div>

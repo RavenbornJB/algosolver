@@ -88,7 +88,7 @@ const PrTable = (props) => {
                 <tr key={problem.id}>
                     <td>{problem.id}</td>
                     <td><Link to={`/viewproblem/${problem.id}`}>{problem.name}</Link></td>
-                    <td>{problem.solved_by}</td>
+                    <td>{problem.solved}</td>
                     <td>{problem.rank}</td>
                 </tr>
             ))}
@@ -98,14 +98,14 @@ const PrTable = (props) => {
 };
 
 const ProblemTable = (props) => {
+
+    const table = useSelector(selectProblemTable);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchTable());
-    })
-
-    const table = useSelector(selectProblemTable);
-
+    }, []);
 
     return (
         <div id="problems">

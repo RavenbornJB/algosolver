@@ -12,7 +12,6 @@ import ProfileUpdateView from '../views/ProfileUpdateView';
 
 import SafeRoute from "../modules/Common/components/SafeRoute";
 
-import {selectUser} from "../modules/redux/AuthReducer";
 
 
 const App = () => {

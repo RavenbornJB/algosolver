@@ -16,8 +16,7 @@ const PersonalInfo = () => {
   let history = useHistory();
 
   const imagePath = require("../../../../images/avatars/" +
-    user.avatar +
-    ".png");
+      "default" + ".png");
 
   return (
     <div className="personalInfo">

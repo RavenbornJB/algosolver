@@ -9,7 +9,9 @@ import { Provider } from 'react-redux'
 import App from "./App";
 
 import MainStore from './modules/redux/MainStore'
+import {fetchTable} from "./modules/redux/ProblemsReducer";
 
+MainStore.dispatch(fetchTable());
 
 ReactDOM.render(
   <React.StrictMode>

@@ -4,12 +4,15 @@ import FormField from '../FormField';
 import UpdateButton from '../UpdateButton';
 
 import './styles.scss';
+import {useDispatch} from "react-redux";
+import {changeAttributes} from "../../../redux/AuthReducer";
 
 const AbstractInputs = (props) => {
   let initialState = {};
   props.fields.forEach((field) => {
     initialState[field.field_id] = "";
   });
+
 
   const [state, setState] = useState(initialState);
 
@@ -20,6 +23,7 @@ const AbstractInputs = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.handleSubmit(state);
+
   };
   return (
     <div className="abstract-inputs">

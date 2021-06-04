@@ -1,14 +1,6 @@
-import ACCOUNTS from "../../Auth/scripts/auth";
-import ErrorMessage from "../../Common/components/ErrorMessage";
 import React from "react";
 
 const initialState = { user: null, error: null}
-
-async function getAccounts() {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return ACCOUNTS;
-}
-
 
 const authActions = {
     setUser: "setUser",
@@ -53,25 +45,29 @@ export const logout = () => ({
     type: authActions.logout,
 });
 
-export const register = (email, user) => async (dispatch, getState) => {
-    const accounts = await getAccounts();
-    if (accounts.has(email)) {
-        dispatch(setError("Wrong email or password"))
-    }
-}
-
 
 export const login = (email, password, history) => async (dispatch, getState) => {
-        const accounts = await getAccounts();
-        if (!accounts.has(email) || ACCOUNTS.get(email).password !== password ) {
-            dispatch(setError("Wrong email or password"))
+    let formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
+
+    fetch("http://127.0.0.1:5000/get_user", {
+        body: formData,
+        method: "POST",
+    }).then(response => response.json()).then(json => {
+        console.log(json)
+        if (json.success) {
+            let birthdate = new Date(Date.parse(json.user.birthdate))
+            json.user.birthdate = birthdate.getDate() + "-"+(birthdate.getMonth()+1) + "-" +birthdate.getFullYear()
+            dispatch(setUser(json.user))
+            history.push("/problemlist");
         }
         else {
-            dispatch(setUser(accounts.get(email)));
-            history.replace("/problemlist");
+            dispatch(setError("Wrong email or password"))
         }
-}
+    });
 
+}
 
 
 export const selectUser = state => state.authReducer.user;

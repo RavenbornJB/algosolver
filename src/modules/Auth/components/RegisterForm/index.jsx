@@ -14,7 +14,7 @@ const RegisterForm = () => {
             placeholder: "Your email"
         },
         {
-            nick: "nick",
+            field_id: "nick",
             type: "text",
             text: "Username:",
             placeholder: "Your username"
@@ -49,26 +49,39 @@ const RegisterForm = () => {
 
     let history = useHistory();
 
-    const verifyEmail = async (email) => false;
-
-    const addAccount = async (email, nick, password, country, birthdate) => {
-        ACCOUNTS.set(email, {email, nick, password, country, birthdate});
-    }
 
     const handleSubmit = (state) => {
         if (state.password !== state.passrep) {
             setError(<ErrorMessage>Passwords are not the same </ErrorMessage>)
             return;
         }
-        verifyEmail(state.email).then(async response => {
-            if (response) {
-                await addAccount(state.email, state.nick, state.password, state.country, state.birthdate);
-                history.replace("/login");
-            } else {
-                setError(<ErrorMessage>Email is already registered </ErrorMessage>)
+
+        if (state.password.length < 4) {
+            setError(<ErrorMessage>Password length must be at least 4 </ErrorMessage>)
+            return;
+        }
+
+        let formData = new FormData();
+        formData.append('email', state.email);
+        formData.append('password', state.password);
+        formData.append('nick', state.nick);
+        formData.append('country', state.country);
+        formData.append('birthdate', state.birthdate);
+
+        fetch("http://127.0.0.1:5000/register", {
+            body: formData,
+            method: "POST",
+        }).then(response => response.json()).then(json => {
+            if (json.success) {
+                history.push("/login");
             }
-        })
+            else {
+                setError(<ErrorMessage>User with given email already exists </ErrorMessage>)
+            }
+        });
+
     }
+
 
 
     return (
