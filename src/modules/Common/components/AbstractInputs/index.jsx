@@ -4,8 +4,6 @@ import FormField from '../FormField';
 import UpdateButton from '../UpdateButton';
 
 import './styles.scss';
-import {useDispatch} from "react-redux";
-import {changeAttributes} from "../../../redux/AuthReducer";
 
 const AbstractInputs = (props) => {
   let initialState = {};

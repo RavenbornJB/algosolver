@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
+
 import ErrorMessage from "../../../Common/components/ErrorMessage";
 import SubmitButton from "../../../Common/components/SubmitButton";
 import {selectUser} from "../../../redux/AuthReducer";
-import {Button} from "react-bootstrap";
+import SuccessMessage from "../../../Common/components/SuccessMessage";
 
 
 
@@ -45,6 +46,11 @@ const FormSolveProblem = (props) => {
                     setState({
                         ...state,
                         submit_res: <ErrorMessage>{json.failed}</ErrorMessage>
+                    });
+                } else {
+                    setState({
+                        ...state,
+                        submit_res: <SuccessMessage>Your solution is correct!</SuccessMessage>
                     });
                 }
             });

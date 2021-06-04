@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import AbstractForm from '../../../Common/components/AbstractForm'
 import {useHistory} from "react-router-dom";
 
-import ACCOUNTS, {User} from "../../scripts/auth";
+import AbstractForm from '../../../Common/components/AbstractForm'
 import ErrorMessage from "../../../Common/components/ErrorMessage";
 
 const RegisterForm = () => {

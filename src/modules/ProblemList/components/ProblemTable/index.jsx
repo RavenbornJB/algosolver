@@ -1,8 +1,7 @@
-import React, {Component, useContext, useEffect} from 'react'
-import {Link, NavLink } from 'react-router-dom';
+import React,  {useEffect} from 'react'
+import {Link} from 'react-router-dom';
 import './styles.scss'
 
-import ProblemsContext from "../../../сontexts/GlobalContexts";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchTable, selectProblemTable} from "../../../redux/ProblemsReducer";
 

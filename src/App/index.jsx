@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
-import {useSelector} from "react-redux";
 
 import ProblemListView from "../views/ProblemListView";
 import ProblemView from "../views/ProblemView";

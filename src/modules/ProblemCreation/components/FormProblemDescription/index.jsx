@@ -1,15 +1,16 @@
 import React, {useState, useContext} from 'react';
+import {useHistory} from "react-router-dom";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ErrorMessage from "../../../Common/components/ErrorMessage";
-import {Redirect, useHistory} from "react-router-dom";
+import {useSelector} from "react-redux";
+
+
 import './styles.scss';
 import SubmitButton from "../../../Common/components/SubmitButton";
-
+import ErrorMessage from "../../../Common/components/ErrorMessage";
 import TestsSection from "../TestsSection";
-import {useSelector} from "react-redux";
 import {selectUser} from "../../../redux/AuthReducer";
-import {setProblemState} from "../../../redux/ProblemsReducer";
+
 
 
 const FormProblemDescription = (props) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import {MAIN_TITLE} from "../../../constants";
 import MainHeading from "../MainHeading";
 import HeadingQuote from "../HeadingQuote";
 

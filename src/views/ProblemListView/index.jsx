@@ -1,7 +1,6 @@
 import React from 'react';
 import ProblemListForm from "../../modules/ProblemList/components/ProblemListForm";
 import Header from "../../modules/Common/components/Header";
-import {BrowserRouter as Router} from "react-router-dom";
 import Footer from "../../modules/Common/components/Footer";
 
 class ProblemListView extends React.Component {

@@ -1,6 +1,5 @@
 import React from "react";
 import PasswordInputs from "../PasswordInputs";
-import EmailInputs from "../EmailInputs";
 import UsernameInputs from "../UsernameInputs";
 import CountryInputs from "../CountryInputs";
 import BirthdateInputs from "../BirthdateInputs";
@@ -14,8 +13,6 @@ const ProfileUpdateMain = () => {
       <h2>Update info</h2>
       <hr />
       <UsernameInputs />
-      <hr />
-      <EmailInputs />
       <hr />
       <PasswordInputs />
       <hr />

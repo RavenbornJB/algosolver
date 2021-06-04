@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles.scss';
 import { Markup } from 'interweave';
 
 class FieldProblemDescription extends React.Component{
