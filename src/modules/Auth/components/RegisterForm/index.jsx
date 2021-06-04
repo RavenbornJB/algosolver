@@ -49,16 +49,25 @@ const RegisterForm = () => {
 
     let history = useHistory();
 
+    const verifyEmail = async (email) => false;
+
+    const addAccount = async (email, nick, password, country, birthdate) => {
+        ACCOUNTS.set(email, {email, nick, password, country, birthdate});
+    }
+
     const handleSubmit = (state) => {
-        if (ACCOUNTS.has(state.email)) {
-            setError(<ErrorMessage>This account already exists</ErrorMessage>)
-            return;
-        } else if (state.password !== state.passrep) {
-            setError(<ErrorMessage>Password are not the same </ErrorMessage>)
+        if (state.password !== state.passrep) {
+            setError(<ErrorMessage>Passwords are not the same </ErrorMessage>)
             return;
         }
-        ACCOUNTS.set(state.email, new User(state.email, state.nick, state.password, state.country, state.birthdate))
-        history.replace("/login");
+        verifyEmail(state.email).then(async response => {
+            if (response) {
+                await addAccount(state.email, state.nick, state.password, state.country, state.birthdate);
+                history.replace("/login");
+            } else {
+                setError(<ErrorMessage>Email is already registered </ErrorMessage>)
+            }
+        })
     }
 
 

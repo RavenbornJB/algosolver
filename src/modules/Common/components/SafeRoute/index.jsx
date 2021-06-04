@@ -1,8 +1,8 @@
 
 import {useSelector} from "react-redux";
 
-import {selectUser} from "../../../stores/LoginStore";
-import {Redirect, Route, useHistory} from "react-router-dom";
+import {selectUser} from "../../../redux/AuthReducer";
+import {Redirect, Route} from "react-router-dom";
 
 
 const SafeRoute = (props) => {

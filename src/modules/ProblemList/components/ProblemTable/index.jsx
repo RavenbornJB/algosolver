@@ -1,8 +1,10 @@
-import React, {Component, useContext} from 'react'
+import React, {Component, useContext, useEffect} from 'react'
 import {Link, NavLink } from 'react-router-dom';
 import './styles.scss'
 
 import ProblemsContext from "../../../сontexts/GlobalContexts";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchTable, selectProblemTable} from "../../../redux/ProblemsReducer";
 
 
 const useSortableData = (problems, config = null) => {
@@ -95,25 +97,23 @@ const PrTable = (props) => {
     );
 };
 
-class ProblemTable extends Component {
-    static contextType = ProblemsContext;
-    render() {
-        return (
-            <div id="problems">
-                <PrTable
-                    problems={[
-                        { id: 1, name: 'Sum two numbers', solved_by: 21, rank: 4 },
-                        { id: 2, name: 'Multiply two numbers', solved_by: 19, rank: 22 },
-                        { id: 3, name: 'Happy primes', solved_by: 16, rank: 9 },
-                        { id: 4, name: 'To Go Or Not To Go?', solved_by: 25, rank: 15 },
-                        { id: 5, name: 'Where is my cake?', solved_by: 12, rank: 45 },
-                        { id: 6, name: 'Jack and Jane', solved_by: 31, rank: 2 },
-                        { id: 7, name: 'Funny mushrooms', solved_by: 9, rank: 30 },
-                    ]}
-                />
-            </div>
-        );
-    };
+const ProblemTable = (props) => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTable());
+    })
+
+    const table = useSelector(selectProblemTable);
+
+
+    return (
+        <div id="problems">
+            <PrTable
+                problems={table}
+            />
+        </div>
+    );
 };
 
 export default ProblemTable

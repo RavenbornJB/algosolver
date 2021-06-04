@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import {useHistory} from "react-router-dom";
 
-import { useDispatch } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 
 import AbstractForm from '../../../Common/components/AbstractForm'
-import ACCOUNTS from "../../scripts/auth";
 import ErrorMessage from "../../../Common/components/ErrorMessage";
 
-import {login} from "../../../stores/LoginStore";
+import {login, selectError} from "../../../redux/AuthReducer";
 
 const LoginForm = (props) => {
     const fields_array = [
@@ -26,25 +25,19 @@ const LoginForm = (props) => {
         }
     ];
 
-    const [error, setError] = useState(<div/>);
-
     const dispatch = useDispatch();
 
-    let history = useHistory();
+    const history = useHistory();
 
-    const handleSubmit = (state) => {
-        if (!ACCOUNTS.has(state.email) || ACCOUNTS.get(state.email).password !== state.password ) {
-            setError(<ErrorMessage>Wrong email or password</ErrorMessage>)
-            return;
-        }
-        dispatch(login({...ACCOUNTS.get(state.email)}));
-        history.replace("/problemlist");
-    }
+    const error = useSelector(selectError);
+
+    const handleSubmit = (state) => dispatch(login(state.email, state.password, history));
+
 
     return (
         <div>
             <AbstractForm handleSubmit={handleSubmit} title="Log In" redirect_to="/problemlist" fields={fields_array}/>
-            {error}
+            {error !== null? <ErrorMessage>{error}</ErrorMessage>: <div/>}
         </div>
     );
 }

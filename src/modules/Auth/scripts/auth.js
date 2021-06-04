@@ -15,23 +15,30 @@ export class User {
 
 
 ACCOUNTS.set("maksprotsyk@gmail.com",
-    new User(
-        "maksprotsyk@gmail.com",
-            "max",
-        "pass",
-        "Ukraine",
-        "22.08.07"
-    )
+    {
+        email: "maksprotsyk@gmail.com",
+        nick: "max",
+        password: "pass",
+        country: "Ukraine",
+        birthdate: "22.08.07",
+        avatar: "default",
+        solved: [1, 2],
+        created: []
+    }
 );
 
+
 ACCOUNTS.set("test@g",
-    new User(
-        "test@g",
-        "test",
-        "p",
-        "Germany",
-        "06.02.2003"
-    )
+    {
+        email: "test@g",
+        nick: "test",
+        password: "pass",
+        country: "Ukraine",
+        birthdate: "22.08.07",
+        avatar: "default",
+        solved: [],
+        created: []
+    }
 );
 
 export default ACCOUNTS;

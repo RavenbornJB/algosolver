@@ -1,12 +1,12 @@
 const flags = {
-    'Ukraine': ':ua:',
-    'United States': ':us:',
-    'China': ':cn:',
-    'United Kingdom': ':ua:',
-    'France': ':fr:',
-    'Italy': ':it:',
-    'Spain': ':es:',
-    'Germany': ':de:'
+    'ukraine': ':ua:',
+    'united states': ':us:',
+    'china': ':cn:',
+    'united kingdom': ':ua:',
+    'france': ':fr:',
+    'italy': ':it:',
+    'spain': ':es:',
+    'germany': ':de:'
 }
 
 export default flags;

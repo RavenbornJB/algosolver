@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import ErrorMessage from "../../../Common/components/ErrorMessage";
 import SuccessMessage from "../../../Common/components/SuccessMessage";
-import { selectUser } from "../../../stores/LoginStore";
+import {selectUser} from "../../../redux/AuthReducer";
 import AbstractInputs from "../../../Common/components/AbstractInputs";
 
 const BirthdateInputs = () => {

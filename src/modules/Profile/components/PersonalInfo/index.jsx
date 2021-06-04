@@ -1,15 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Emoji from "react-emoji-render";
 import 'font-awesome/css/font-awesome.min.css';
 
 import AdditionalData from "../AdditionalData";
 import "./styles.scss";
 
-import { selectUser } from "../../../stores/LoginStore";
+import {selectUser} from "../../../redux/AuthReducer";
 
-import flags from "../../../constants/flags";
 
 
 const PersonalInfo = () => {
@@ -27,10 +25,9 @@ const PersonalInfo = () => {
       <div className="data">
         <h2>
           {user.nick}
-          <Emoji text={flags[user.country]} />
         </h2>
         <AdditionalData />
-        <button className="btn btn-outline-primary" onClick={() => history.push("/profile/update")}><i className="fa fa-pencil"></i> Edit</button>
+        <button className="btn btn-outline-primary" onClick={() => history.push("/profile/update")}><i className="fa fa-pencil"/> Edit</button>
       </div>
     </div>
   );

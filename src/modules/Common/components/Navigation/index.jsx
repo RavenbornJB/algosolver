@@ -2,7 +2,7 @@ import {Link, NavLink } from 'react-router-dom';
 import {useDispatch} from "react-redux";
 
 import {MAIN_TITLE} from "../../../constants";
-import {logout} from "../../../stores/LoginStore";
+import {logout} from "../../../redux/AuthReducer";
 
 
 const Navigation = () => {

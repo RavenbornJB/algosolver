@@ -12,18 +12,10 @@ import ProfileUpdateView from '../views/ProfileUpdateView';
 
 import SafeRoute from "../modules/Common/components/SafeRoute";
 
-import {selectUser} from "../modules/stores/LoginStore";
+import {selectUser} from "../modules/redux/AuthReducer";
 
 
 const App = () => {
-    const user = useSelector(selectUser);
-
-    const checkLogin = (nextState, replace) => {
-        if (!user) {
-            replace("/login");
-        }
-    }
-
     return (
         <div>
             <Router>

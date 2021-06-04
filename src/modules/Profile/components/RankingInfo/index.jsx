@@ -1,5 +1,5 @@
 import React from "react";
-import {selectUser} from "../../../stores/LoginStore";
+import {selectUser} from "../../../redux/AuthReducer";
 import "./styles.scss";
 
 import {useSelector} from "react-redux";

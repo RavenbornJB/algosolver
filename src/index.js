@@ -8,12 +8,12 @@ import { Provider } from 'react-redux'
 
 import App from "./App";
 
-import LoginStore from './modules/stores/LoginStore'
+import MainStore from './modules/redux/MainStore'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={LoginStore}>
+    <Provider store={MainStore}>
       <App/>
     </Provider>
   </React.StrictMode>,
