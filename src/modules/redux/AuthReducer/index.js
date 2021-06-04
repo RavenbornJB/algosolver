@@ -1,4 +1,5 @@
 import React from "react";
+import {BACKEND_URL} from "../../constants";
 
 const initialState = { user: null, error: null}
 
@@ -51,7 +52,7 @@ export const login = (email, password, history) => async (dispatch, getState) =>
     formData.append('email', email);
     formData.append('password', password);
 
-    fetch("http://127.0.0.1:5000/get_user", {
+    fetch(BACKEND_URL + "/get_user", {
         body: formData,
         method: "POST",
     }).then(response => response.json()).then(json => {

@@ -10,6 +10,7 @@ import Footer from "../../modules/Common/components/Footer";
 import ErrorMessage from "../../modules/Common/components/ErrorMessage";
 import DeleteButton from "../../modules/ProblemView/components/DeleteButton";
 import {selectUser} from "../../modules/redux/AuthReducer";
+import {BACKEND_URL} from "../../modules/constants";
 
 
 const ProblemView = (props) => {
@@ -22,7 +23,7 @@ const ProblemView = (props) => {
     const user = useSelector(selectUser);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/get_problem?id=" + problemId , {
+        fetch(BACKEND_URL + "/get_problem?id=" + problemId , {
             method: "GET",
         }).then(response => response.json()).then(json => {
             if (json.success) {

@@ -1,4 +1,5 @@
 import React from "react";
+import {BACKEND_URL} from "../../constants";
 
 const initialState = { table: []}
 
@@ -28,7 +29,7 @@ export const setProblemState = (table) => ({
 
 export const fetchTable = () => async (dispatch, getState) => {
 
-    fetch("http://127.0.0.1:5000/get_problems", {
+    fetch(BACKEND_URL + "/get_problems", {
         method: "GET",
     }).then(response => response.json()).then(json => {
         console.log(json)

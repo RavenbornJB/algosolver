@@ -5,6 +5,7 @@ import ErrorMessage from "../../../Common/components/ErrorMessage";
 import SubmitButton from "../../../Common/components/SubmitButton";
 import {selectUser} from "../../../redux/AuthReducer";
 import SuccessMessage from "../../../Common/components/SuccessMessage";
+import {BACKEND_URL} from "../../../constants";
 
 
 
@@ -37,7 +38,7 @@ const FormSolveProblem = (props) => {
             formData.append('problem_id', id);
 
 
-            fetch("http://127.0.0.1:5000/interpreter", {
+            fetch(BACKEND_URL + "/interpreter", {
                 body: formData,
                 method: "POST",
             }).then(response => response.json()).then(json => {

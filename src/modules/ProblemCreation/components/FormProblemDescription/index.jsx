@@ -10,6 +10,7 @@ import SubmitButton from "../../../Common/components/SubmitButton";
 import ErrorMessage from "../../../Common/components/ErrorMessage";
 import TestsSection from "../TestsSection";
 import {selectUser} from "../../../redux/AuthReducer";
+import {BACKEND_URL} from "../../../constants";
 
 
 
@@ -48,7 +49,7 @@ const FormProblemDescription = (props) => {
 
 
 
-        fetch("http://127.0.0.1:5000/add_problem", {
+        fetch(BACKEND_URL + "/add_problem", {
             body: formData,
             method: "POST",
         }).then(response => response.json()).then(json => {

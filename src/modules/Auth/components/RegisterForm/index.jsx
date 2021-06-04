@@ -3,6 +3,7 @@ import {useHistory} from "react-router-dom";
 
 import AbstractForm from '../../../Common/components/AbstractForm'
 import ErrorMessage from "../../../Common/components/ErrorMessage";
+import {BACKEND_URL} from "../../../constants";
 
 const RegisterForm = () => {
     const fields_array = [
@@ -60,6 +61,12 @@ const RegisterForm = () => {
             return;
         }
 
+        if (state.nick.length < 4) {
+            setError(<ErrorMessage>Username length must be at least 4 </ErrorMessage>)
+            return;
+        }
+
+
         let formData = new FormData();
         formData.append('email', state.email);
         formData.append('password', state.password);
@@ -67,7 +74,7 @@ const RegisterForm = () => {
         formData.append('country', state.country);
         formData.append('birthdate', state.birthdate);
 
-        fetch("http://127.0.0.1:5000/register", {
+        fetch(BACKEND_URL + "/register", {
             body: formData,
             method: "POST",
         }).then(response => response.json()).then(json => {
