@@ -28,3 +28,6 @@ yarn-error.log*
 
 # jetbrains caches
 /.idea
+
+# local
+/db_api/.git
