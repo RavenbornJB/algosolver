@@ -1,11 +1,29 @@
 import psycopg2
 from psycopg2.extras import execute_values
+import time
 
 
 class AlgoDB:
-    def __init__(self, connection):
-        self.connection = connection
-        self.cursor = connection.cursor()
+    P = None
+
+    def __init__(self):
+        if self.P is None:
+            while True:
+                try:
+                    self.connection = psycopg2.connect(host="ec2-54-73-68-39.eu-west-1.compute.amazonaws.com",
+                                                       database="d766e7a5lj891n",
+                                                       user="mimmpbfogysuir",
+                                                       password="ca24ec0e0a874062d4950b2064fb2745ab6f7478955a750c868b824f8974c632")
+                    self.cursor = self.connection.cursor()
+                    break
+                except NameError:
+                    time.sleep(5)
+                    continue
+            AlgoDB.P = self
+        else:
+            self.connection = self.P.connection
+            self.cursor = self.P.cursor
+
 
     def add_user(self, email, password, nick, country, birthdate):
         self.cursor.execute(
@@ -38,6 +56,9 @@ class AlgoDB:
         return self.cursor.fetchone()
 
     def update_user(self, email, password, new_password, nick, country, birthdate):
+        if new_password == '' or nick == '' or country == '' or birthdate == '':
+            return False
+
         self.cursor.execute(
                 """
                 UPDATE users
@@ -47,7 +68,7 @@ class AlgoDB:
                 """,
             (new_password, nick, country, birthdate, email, password)
         )
-        return self.cursor.fetchone()
+        return True
 
     def solve_problem(self, user_id, problem_id):
         self.cursor.execute(

@@ -52,17 +52,17 @@ const RegisterForm = () => {
 
     const handleSubmit = (state) => {
         if (state.password !== state.passrep) {
-            setError(<ErrorMessage>Passwords are not the same </ErrorMessage>)
+            setError(<ErrorMessage>Passwords don't match </ErrorMessage>)
             return;
         }
 
         if (state.password.length < 4) {
-            setError(<ErrorMessage>Password length must be at least 4 </ErrorMessage>)
+            setError(<ErrorMessage>Password must be at least 4 characters long </ErrorMessage>)
             return;
         }
 
         if (state.nick.length < 4) {
-            setError(<ErrorMessage>Username length must be at least 4 </ErrorMessage>)
+            setError(<ErrorMessage>Username must be at least 4 characters long </ErrorMessage>)
             return;
         }
 

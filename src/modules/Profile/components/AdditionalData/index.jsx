@@ -13,11 +13,11 @@ const AdditionalData = () =>  {
       <div className="additionalData">
         <p>
             <br/>
-            Country: <Emoji text={user.country.toLocaleLowerCase() in flags? user.country + flags[user.country.toLocaleLowerCase()]:  user.country}/>
+            Country: <Emoji text={user.country in flags? user.country + flags[user.country]:  user.country}/>
             <br/>
-          Born: {user.birthdate}
-          <br/>
-          Email: {user.email}
+            Born: {user.birthdate}
+            <br/>
+            Email: {user.email}
         </p>
       </div>
     );

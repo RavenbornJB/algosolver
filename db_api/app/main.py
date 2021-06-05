@@ -7,11 +7,6 @@ import os
 
 from app.db import AlgoDB
 
-conn = psycopg2.connect(host="ec2-54-73-68-39.eu-west-1.compute.amazonaws.com",
-                        database="d766e7a5lj891n",
-                        user="mimmpbfogysuir",
-                        password="ca24ec0e0a874062d4950b2064fb2745ab6f7478955a750c868b824f8974c632")
-db = AlgoDB(conn)
 
 id = 0
 
@@ -26,7 +21,8 @@ def index():
 
 @app.route('/register', methods=['POST'])
 def register():
-    global db
+    db = AlgoDB()
+
     if db.check_email(request.form["email"]):
         return jsonify(success=False)
 
@@ -45,7 +41,8 @@ def register():
 
 @app.route('/delete_problem', methods=['POST'])
 def delete_problem():
-    global db
+    db = AlgoDB()
+
     user = db.check_credentials(request.form["email"], request.form["password"])
     if user is None:
         return jsonify(success=False)
@@ -59,7 +56,8 @@ def delete_problem():
 
 @app.route('/get_user', methods=['POST'])
 def get_user():
-    global db
+    db = AlgoDB()
+
     user = db.check_credentials(request.form["email"], request.form["password"])
     if user is None:
         return jsonify(success=False)
@@ -76,9 +74,26 @@ def get_user():
     )
 
 
+@app.route('/update_user', methods=['POST'])
+def update_user():
+    db = AlgoDB()
+
+    user = db.check_credentials(request.form["email"], request.form["password"])
+    if user is None:
+        return jsonify(success=False)
+
+    res = db.update_user(request.form["email"], request.form["password"], request.form["new_password"],
+                         request.form["nick"], request.form["country"], request.form["birthdate"])
+
+    db.commit_changes()
+
+    return jsonify(success=res)
+
+
 @app.route('/add_problem', methods=['POST'])
 def add_problem():
-    global db
+    db = AlgoDB()
+
     user = db.check_credentials(request.form["email"], request.form["password"])
     if user is None:
         return jsonify(success=False)
@@ -98,7 +113,7 @@ def add_problem():
 
 @app.route('/get_problems', methods=['GET'])
 def get_problems():
-    global db
+    db = AlgoDB()
 
     return jsonify(
         success=True,
@@ -108,7 +123,7 @@ def get_problems():
 
 @app.route('/get_problem', methods=['GET'])
 def get_problem():
-    global db
+    db = AlgoDB()
 
     id = request.args.get('id')
 
@@ -125,6 +140,8 @@ def get_problem():
 
 @app.route('/interpreter', methods=['POST'])
 def test_program():
+    db = AlgoDB()
+
     global id
 
     f = request.files['file']
