@@ -65,8 +65,8 @@ const PrTable = (props) => {
                 <th>
                     <button
                         type="button"
-                        onClick={() => requestSort('solved_by')}
-                        className={getClassNamesFor('solved_by')}
+                        onClick={() => requestSort('solved')}
+                        className={getClassNamesFor('solved')}
                     >
                         Solved by
                     </button>
