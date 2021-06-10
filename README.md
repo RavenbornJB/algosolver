@@ -14,13 +14,6 @@ npm start
 
 ## Screenshots
 
-### Login Page
-![image](images/login.png)
-
-### Registration page
-
-![image](images/registration.png)
-
 ### Problem creation page
 
 ![image](images/problem_creation.png)
