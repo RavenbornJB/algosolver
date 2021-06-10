@@ -26,9 +26,6 @@ npm start
 
 ![image](images/problem_list.png)
 
-### Profile view page
-
-![image](images/profile.png)
 
 
 ## Authors
