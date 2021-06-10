@@ -19,7 +19,7 @@ npm start
 
 ### Registration page
 
-![image](images/register.png)
+![image](images/registration.png)
 
 ### Problem creation page
 
