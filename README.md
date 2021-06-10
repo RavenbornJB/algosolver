@@ -20,7 +20,7 @@ npm start
 
 ### Problem view page
 
-![image](images/problem_view.png)
+![image](images/problem_view_new.png)
 
 ### Problem list page
 
