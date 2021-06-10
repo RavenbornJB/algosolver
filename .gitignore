@@ -31,3 +31,4 @@ yarn-error.log*
 
 # local
 /db_api/.git
+/react-website/node_modules/
